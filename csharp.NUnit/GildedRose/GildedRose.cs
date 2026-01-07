@@ -98,11 +98,16 @@ public class GildedRose
             }
             else
             {
-                if (Items[i].Quality < 50)
-                {
-                    Items[i].Quality = Items[i].Quality + 1;
-                }
+                expireAgedBriedQualityRules(i);
             }
+        }
+    }
+
+    private void expireAgedBriedQualityRules(int i)
+    {
+        if (Items[i].Quality < 50)
+        {
+            Items[i].Quality = Items[i].Quality + 1;
         }
     }
 }
