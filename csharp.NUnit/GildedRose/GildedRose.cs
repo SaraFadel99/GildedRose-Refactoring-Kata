@@ -81,7 +81,11 @@ public class GildedRose
         {
             if (Items[i].Name != "Aged Brie")
             {
-                if (Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
+                if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+                {
+                    Items[i].Quality = Items[i].Quality - Items[i].Quality;
+                }
+                else
                 {
                     if (Items[i].Quality > 0)
                     {
@@ -90,10 +94,6 @@ public class GildedRose
                             Items[i].Quality = Items[i].Quality - 1;
                         }
                     }
-                }
-                else
-                {
-                    Items[i].Quality = Items[i].Quality - Items[i].Quality;
                 }
             }
             else
