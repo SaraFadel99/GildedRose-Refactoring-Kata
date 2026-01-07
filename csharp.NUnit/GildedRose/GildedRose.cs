@@ -21,12 +21,7 @@ public class GildedRose
             }
             else
             {
-                if (Items[i].Quality < 50)
-                {
-                    Items[i].Quality = Items[i].Quality + 1;
-
-                    applyBackstagePassQualityRules(i);
-                }
+                applyQualityRulesForBrieAndBackstagePass(i);
             }
 
             if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
@@ -34,6 +29,16 @@ public class GildedRose
                 Items[i].SellIn = Items[i].SellIn - 1;
             }
             applyExpiredQualityRules(i);
+        }
+    }
+
+    private void applyQualityRulesForBrieAndBackstagePass(int i)
+    {
+        if (Items[i].Quality < 50)
+        {
+            Items[i].Quality = Items[i].Quality + 1;
+
+            applyBackstagePassQualityRules(i);
         }
     }
 
