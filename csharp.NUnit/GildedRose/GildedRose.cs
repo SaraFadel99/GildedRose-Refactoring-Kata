@@ -56,32 +56,36 @@ public class GildedRose
             {
                 Items[i].SellIn = Items[i].SellIn - 1;
             }
+            ApplyExpiredQualityRules(i);
+        }
+    }
 
-            if (Items[i].SellIn < 0)
+    private void ApplyExpiredQualityRules(int i)
+    {
+        if (Items[i].SellIn < 0)
+        {
+            if (Items[i].Name != "Aged Brie")
             {
-                if (Items[i].Name != "Aged Brie")
+                if (Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
                 {
-                    if (Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
+                    if (Items[i].Quality > 0)
                     {
-                        if (Items[i].Quality > 0)
+                        if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
                         {
-                            if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                            {
-                                Items[i].Quality = Items[i].Quality - 1;
-                            }
+                            Items[i].Quality = Items[i].Quality - 1;
                         }
-                    }
-                    else
-                    {
-                        Items[i].Quality = Items[i].Quality - Items[i].Quality;
                     }
                 }
                 else
                 {
-                    if (Items[i].Quality < 50)
-                    {
-                        Items[i].Quality = Items[i].Quality + 1;
-                    }
+                    Items[i].Quality = Items[i].Quality - Items[i].Quality;
+                }
+            }
+            else
+            {
+                if (Items[i].Quality < 50)
+                {
+                    Items[i].Quality = Items[i].Quality + 1;
                 }
             }
         }
