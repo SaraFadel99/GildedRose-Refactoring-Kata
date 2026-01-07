@@ -93,7 +93,7 @@ public class GildedRose
             {
                 if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
                 {
-                    Items[i].Quality = Items[i].Quality - Items[i].Quality;
+                    Items[i].Quality = 0;
                 }
                 else
                 {
