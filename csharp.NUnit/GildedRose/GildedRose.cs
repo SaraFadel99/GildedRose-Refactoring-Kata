@@ -43,7 +43,6 @@ public class GildedRose
             }
             else 
             {
-              //  Items[i].Quality = Items[i].Quality + 1;
                 applyBackstagePassQualityRules(i);
             }
 
