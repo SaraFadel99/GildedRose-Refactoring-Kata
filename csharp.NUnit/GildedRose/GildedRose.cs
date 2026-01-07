@@ -36,9 +36,17 @@ public class GildedRose
     {
         if (Items[i].Quality < 50)
         {
-            Items[i].Quality = Items[i].Quality + 1;
+            if (Items[i].Name == "Aged Brie") 
+            {
+                Items[i].Quality = Items[i].Quality + 1;
 
-            applyBackstagePassQualityRules(i);
+            }
+            else 
+            {
+                Items[i].Quality = Items[i].Quality + 1;
+                applyBackstagePassQualityRules(i);
+            }
+
         }
     }
 
