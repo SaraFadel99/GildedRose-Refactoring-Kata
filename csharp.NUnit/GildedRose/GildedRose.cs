@@ -55,21 +55,15 @@ public class GildedRose
         {
 
             if (Items[i].SellIn < 11 && Items[i].SellIn > 5)
-            {
-                if (Items[i].Quality < 50)
-                {
-                    int incrteasedQuality = Items[i].Quality + 2;
-                    Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;
-                }
+            {  
+                 int incrteasedQuality = Items[i].Quality + 2;
+                 Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;
             }
 
             else if (Items[i].SellIn < 6)
             {
-                if (Items[i].Quality < 50)
-                {
-                    int incrteasedQuality = Items[i].Quality + 3;
-                    Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;
-                }
+                  int incrteasedQuality = Items[i].Quality + 3;
+                  Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;    
             }
             else 
             {
