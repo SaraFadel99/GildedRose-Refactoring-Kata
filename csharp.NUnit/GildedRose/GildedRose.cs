@@ -77,11 +77,7 @@ public class GildedRose
         Items[i].SellIn = Items[i].SellIn - 1;
         if (Items[i].SellIn < 0)
         {
-            if (Items[i].Name == "Aged Brie")
-            {
-                expiredAgedBriedQualityRules(i);
-            }
-            else
+            if (Items[i].Name != "Aged Brie")
             {
                 if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
                 {
@@ -91,6 +87,10 @@ public class GildedRose
                 {
                     regularsExpiredQualityRules(i);
                 }
+            }
+            else
+            {
+                expiredAgedBriedQualityRules(i);
             }
         }
     }
