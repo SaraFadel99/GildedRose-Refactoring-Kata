@@ -58,7 +58,8 @@ public class GildedRose
             {
                 if (Items[i].Quality < 50)
                 {
-                    Items[i].Quality = Items[i].Quality + 2;
+                    int incrteasedQuality = Items[i].Quality + 2;
+                    Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;
                 }
             }
 
@@ -66,7 +67,8 @@ public class GildedRose
             {
                 if (Items[i].Quality < 50)
                 {
-                    Items[i].Quality = Items[i].Quality + 3;
+                    int incrteasedQuality = Items[i].Quality + 3;
+                    Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;
                 }
             }
             else 
