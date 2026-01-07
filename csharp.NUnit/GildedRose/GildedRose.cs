@@ -43,7 +43,7 @@ public class GildedRose
             }
             else 
             {
-                Items[i].Quality = Items[i].Quality + 1;
+              //  Items[i].Quality = Items[i].Quality + 1;
                 applyBackstagePassQualityRules(i);
             }
 
@@ -54,20 +54,25 @@ public class GildedRose
     {
         if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
         {
-            if (Items[i].SellIn < 11)
+
+            if (Items[i].SellIn < 11 && Items[i].SellIn > 5)
             {
                 if (Items[i].Quality < 50)
                 {
-                    Items[i].Quality = Items[i].Quality + 1;
+                    Items[i].Quality = Items[i].Quality + 2;
                 }
             }
 
-            if (Items[i].SellIn < 6)
+            else if (Items[i].SellIn < 6)
             {
                 if (Items[i].Quality < 50)
                 {
-                    Items[i].Quality = Items[i].Quality + 1;
+                    Items[i].Quality = Items[i].Quality + 3;
                 }
+            }
+            else 
+            {
+                Items[i].Quality = Items[i].Quality + 1;
             }
         }
     }
