@@ -89,18 +89,17 @@ public class GildedRose
             {
                 expiredAgedBriedQualityRules(i);
             }
+
+            else if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+            {
+                Items[i].Quality = 0;
+            }
             else
             {
-                if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    Items[i].Quality = 0;
-                }
-                else
-                {
-                    regularsExpiredQualityRules(i);
-                }
+                regularsExpiredQualityRules(i);
             }
-        }
+            }
+        
     }
 
     private void regularsExpiredQualityRules(int i)
