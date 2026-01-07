@@ -56,11 +56,11 @@ public class GildedRose
             {
                 Items[i].SellIn = Items[i].SellIn - 1;
             }
-            ApplyExpiredQualityRules(i);
+            applyExpiredQualityRules(i);
         }
     }
 
-    private void ApplyExpiredQualityRules(int i)
+    private void applyExpiredQualityRules(int i)
     {
         if (Items[i].SellIn < 0)
         {
