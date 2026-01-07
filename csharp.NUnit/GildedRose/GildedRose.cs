@@ -24,10 +24,7 @@ public class GildedRose
                 applyQualityRulesOnRegulars(i);
             }
 
-            if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-            {
-                Items[i].SellIn = Items[i].SellIn - 1;
-            }
+       
             applyExpiredQualityRules(i);
         }
     }
@@ -77,6 +74,10 @@ public class GildedRose
 
     private void applyExpiredQualityRules(int i)
     {
+        if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
+        {
+            Items[i].SellIn = Items[i].SellIn - 1;
+        }
         if (Items[i].SellIn < 0)
         {
             if (Items[i].Name != "Aged Brie")
