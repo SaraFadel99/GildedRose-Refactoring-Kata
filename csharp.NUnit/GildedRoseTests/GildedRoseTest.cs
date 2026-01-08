@@ -254,4 +254,48 @@ public class GildedRoseTest
         Assert.DoesNotThrow(() => app.UpdateQuality(), "UpdateQuality should handle empty list without errors");
         Assert.That(items.Count, Is.EqualTo(0), "Empty list should remain empty");
     }
+
+
+
+    [Test]
+    public void ConjuiredItems_tests()
+    {
+        var items = new List<Item>
+        {
+            new Item { Name = "Conjured", SellIn = 5, Quality = 20 },
+            new Item { Name = "Conjured", SellIn = 10, Quality = 50 },
+            new Item { Name = "Conjured", SellIn = 0, Quality = 10 },
+            new Item { Name = "Conjured", SellIn = 7, Quality = 15 },
+            new Item { Name = "Conjured", SellIn = 1, Quality = 25 },
+            new Item { Name = "Conjured", SellIn = -1, Quality = 10 },
+            new Item { Name = "Conjured", SellIn = 5, Quality = 2 }
+
+
+        };
+        var app = new GildedRose(items);
+
+        app.UpdateQuality();
+
+        Assert.That(items[0].Quality, Is.EqualTo(18));
+        Assert.That(items[0].SellIn, Is.EqualTo(4));
+
+        Assert.That(items[1].Quality, Is.EqualTo(48));
+        Assert.That(items[1].SellIn, Is.EqualTo(9));
+
+        Assert.That(items[2].Quality, Is.EqualTo(6));
+        Assert.That(items[2].SellIn, Is.EqualTo(-1));
+
+        Assert.That(items[3].Quality, Is.EqualTo(13));
+        Assert.That(items[3].SellIn, Is.EqualTo(6));
+
+        Assert.That(items[4].Quality, Is.EqualTo(23));
+        Assert.That(items[4].SellIn, Is.EqualTo(0));
+
+        Assert.That(items[5].Quality, Is.EqualTo(6));
+        Assert.That(items[5].SellIn, Is.EqualTo(-2));
+
+        Assert.That(items[6].Quality, Is.EqualTo(0));
+        Assert.That(items[6].SellIn, Is.EqualTo(4));
+
+    }
 }
