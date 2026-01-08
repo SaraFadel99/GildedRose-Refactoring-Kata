@@ -79,25 +79,29 @@ public class GildedRose
     }
     private void applyBackstagePassQualityRules(int i)
     {
-        if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+        if (Items[i].Quality < 50)
         {
+            if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+            {
 
-            if (Items[i].SellIn < 11 && Items[i].SellIn > 5)
-            {
-                int incrteasedQuality = Items[i].Quality + 2;
-                Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;
-            }
+                if (Items[i].SellIn < 11 && Items[i].SellIn > 5)
+                {
+                    int incrteasedQuality = Items[i].Quality + 2;
+                    Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;
+                }
 
-            else if (Items[i].SellIn < 6)
-            {
-                int incrteasedQuality = Items[i].Quality + 3;
-                Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;
-            }
-            else
-            {
-                Items[i].Quality = Items[i].Quality + 1;
+                else if (Items[i].SellIn < 6)
+                {
+                    int incrteasedQuality = Items[i].Quality + 3;
+                    Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;
+                }
+                else
+                {
+                    Items[i].Quality = Items[i].Quality + 1;
+                }
             }
         }
+ 
     }
 
 }
