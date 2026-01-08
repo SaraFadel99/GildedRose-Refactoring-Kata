@@ -38,7 +38,8 @@ public class GildedRose
         {
             if (Items[i].Name == "Aged Brie") 
             {
-                Items[i].Quality = Items[i].Quality + 1;
+                expiredAgedBriedQualityRules(i);
+                // Items[i].Quality = Items[i].Quality + 1;
 
             }
             else 
