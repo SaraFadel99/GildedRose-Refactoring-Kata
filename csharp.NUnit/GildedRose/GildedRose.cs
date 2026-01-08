@@ -25,7 +25,7 @@ public class GildedRose
             }
             else if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert") 
             {
-                applyQualityRulesForBrieAndBackstagePass(i);
+                applyQualityRulesBackstagePass(i);
 
             }
             else
@@ -37,7 +37,7 @@ public class GildedRose
         }
     }
 
-    private void applyQualityRulesForBrieAndBackstagePass(int i)
+    private void applyQualityRulesBackstagePass(int i)
     {
         if (Items[i].Quality < 50)
         {
