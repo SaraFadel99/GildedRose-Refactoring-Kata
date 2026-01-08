@@ -46,7 +46,7 @@ public class GildedRose
 
     private void applyExpiredQualityRules(int i)
     {
-        Items[i].SellIn = Items[i].SellIn - 1;
+        updateSellIn(i);
         if (Items[i].SellIn < 0)
         {
             if (Items[i].Name == "Aged Brie")
@@ -61,8 +61,14 @@ public class GildedRose
             {
                 applyQualityRulesOnRegulars(i);
             }
-        }   
+        }
     }
+
+    private void updateSellIn(int i)
+    {
+        Items[i].SellIn = Items[i].SellIn - 1;
+    }
+
     private void applyQualityRulesOnRegulars(int i)
     {
         if (Items[i].Quality > 0)
