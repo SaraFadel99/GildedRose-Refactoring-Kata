@@ -35,14 +35,6 @@ public class GildedRose
             applyExpiredQualityRules(i);
         }
     }
-
-    private void applyQualityRulesBackstagePass(int i)
-    {
-        if (Items[i].Quality < 50)
-        {
-            applyBackstagePassQualityRules(i);
-        }
-    }
     private void applyExpiredQualityRules(int i)
     {
         Items[i].SellIn = Items[i].SellIn - 1;
