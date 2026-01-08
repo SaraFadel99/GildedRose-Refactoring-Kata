@@ -41,15 +41,7 @@ public class GildedRose
     {
         if (Items[i].Quality < 50)
         {
-            if (Items[i].Name == "Aged Brie") 
-            {
-                agedBrieQualityRules(i);
-            }
-            else 
-            {
-                applyBackstagePassQualityRules(i);
-            }
-
+            applyBackstagePassQualityRules(i);
         }
     }
 
