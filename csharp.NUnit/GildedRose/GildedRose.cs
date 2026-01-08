@@ -20,6 +20,7 @@ public class GildedRose
                 continue;
             }
             applyQualityRulesBeforeSellInUpdate(i);
+            updateSellIn(i);
             applyExpiredQualityRules(i);
         }
     }
@@ -46,7 +47,6 @@ public class GildedRose
 
     private void applyExpiredQualityRules(int i)
     {
-        updateSellIn(i);
         if (Items[i].SellIn < 0)
         {
             if (Items[i].Name == "Aged Brie")
