@@ -43,29 +43,6 @@ public class GildedRose
             applyBackstagePassQualityRules(i);
         }
     }
-
-    private void applyBackstagePassQualityRules(int i)
-    {
-        if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
-        {
-
-            if (Items[i].SellIn < 11 && Items[i].SellIn > 5)
-            {  
-                 int incrteasedQuality = Items[i].Quality + 2;
-                 Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;
-            }
-
-            else if (Items[i].SellIn < 6)
-            {
-                  int incrteasedQuality = Items[i].Quality + 3;
-                  Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;    
-            }
-            else 
-            {
-                Items[i].Quality = Items[i].Quality + 1;
-            }
-        }
-    }
     private void applyExpiredQualityRules(int i)
     {
         Items[i].SellIn = Items[i].SellIn - 1;
@@ -93,7 +70,6 @@ public class GildedRose
             Items[i].Quality = Items[i].Quality - 1;
         }
     }
-
     private void agedBrieQualityRules(int i)
     {
         if (Items[i].Quality < 50)
@@ -101,4 +77,27 @@ public class GildedRose
             Items[i].Quality = Items[i].Quality + 1;
         }
     }
+    private void applyBackstagePassQualityRules(int i)
+    {
+        if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+        {
+
+            if (Items[i].SellIn < 11 && Items[i].SellIn > 5)
+            {
+                int incrteasedQuality = Items[i].Quality + 2;
+                Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;
+            }
+
+            else if (Items[i].SellIn < 6)
+            {
+                int incrteasedQuality = Items[i].Quality + 3;
+                Items[i].Quality = incrteasedQuality < 50 ? incrteasedQuality : 50;
+            }
+            else
+            {
+                Items[i].Quality = Items[i].Quality + 1;
+            }
+        }
+    }
+
 }
