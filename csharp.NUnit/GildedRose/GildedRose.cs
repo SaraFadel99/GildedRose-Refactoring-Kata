@@ -57,6 +57,10 @@ public class GildedRose
             {
                 Items[i].Quality = 0;
             }
+            else if (Items[i].Name == "Conjured")
+            {
+                applyQualityRulesOnConjured(i);
+            }
             else
             {
                 applyQualityRulesOnRegulars(i);
