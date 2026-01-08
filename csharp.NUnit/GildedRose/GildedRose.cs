@@ -26,7 +26,6 @@ public class GildedRose
             else if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert") 
             {
                 applyQualityRulesBackstagePass(i);
-
             }
             else
             {
@@ -67,15 +66,6 @@ public class GildedRose
             }
         }
     }
-
-    private void applyQualityRulesOnRegulars(int i)
-    {
-        if (Items[i].Quality > 0)
-        {
-           Items[i].Quality = Items[i].Quality - 1;
-        }
-    }
-
     private void applyExpiredQualityRules(int i)
     {
         Items[i].SellIn = Items[i].SellIn - 1;
@@ -95,6 +85,13 @@ public class GildedRose
                 applyQualityRulesOnRegulars(i);
             }
         }   
+    }
+    private void applyQualityRulesOnRegulars(int i)
+    {
+        if (Items[i].Quality > 0)
+        {
+            Items[i].Quality = Items[i].Quality - 1;
+        }
     }
 
     private void agedBrieQualityRules(int i)
