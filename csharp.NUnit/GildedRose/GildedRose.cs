@@ -5,17 +5,22 @@ namespace GildedRoseKata;
 public class GildedRose
 {
     IList<Item> Items;
+    private const string SULFURAS = "Sulfuras, Hand of Ragnaros";
+    private const string AGED_BRIE = "Aged Brie";
+    private const string BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
+    private const string CONJURED = "Conjured";
 
     public GildedRose(IList<Item> Items)
     {
         this.Items = Items;
     }
 
+
     public void UpdateQuality()
     {
         for (var i = 0; i < Items.Count; i++)
         {
-            if (Items[i].Name == "Sulfuras, Hand of Ragnaros")
+            if (Items[i].Name == SULFURAS)
             {
                 continue;
             }
@@ -27,15 +32,15 @@ public class GildedRose
 
     private void applyQualityRulesBeforeSellInUpdate(int i)
     {
-        if (Items[i].Name == "Aged Brie")
+        if (Items[i].Name == AGED_BRIE)
         {
             agedBrieQualityRules(i);
         }
-        else if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+        else if (Items[i].Name == BACKSTAGE_PASSES)
         {
             applyBackstagePassQualityRules(i);
         }
-        else if (Items[i].Name == "Conjured")
+        else if (Items[i].Name == CONJURED)
         {
             applyQualityRulesOnConjured(i);
         }
@@ -49,15 +54,15 @@ public class GildedRose
     {
         if (Items[i].SellIn < 0)
         {
-            if (Items[i].Name == "Aged Brie")
+            if (Items[i].Name == AGED_BRIE)
             {
                 agedBrieQualityRules(i);
             }
-            else if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+            else if (Items[i].Name == BACKSTAGE_PASSES)
             {
                 Items[i].Quality = 0;
             }
-            else if (Items[i].Name == "Conjured")
+            else if (Items[i].Name == CONJURED)
             {
                 applyQualityRulesOnConjured(i);
             }
@@ -98,7 +103,7 @@ public class GildedRose
     {
         if (Items[i].Quality < 50)
         {
-            if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+            if (Items[i].Name == BACKSTAGE_PASSES)
             {
 
                 if (Items[i].SellIn < 11 && Items[i].SellIn > 5)
